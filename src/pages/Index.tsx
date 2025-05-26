@@ -58,21 +58,35 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-gray-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
+            <a
+              href="/CV_Polina_Kyrylova.pdf"
+              download="CV_Polina_Kyrylova.pdf"
             >
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
-            </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-gray-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+            </a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-48 h-48 bg-pink-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 right-1/3 w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute bottom-1/3 right-1/2 w-24 h-24 bg-violet-400/25 rounded-full blur-xl animate-bounce" style={{animationDelay: '1.5s'}}></div>
+        </div>
+        
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -130,22 +144,20 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-            <p className="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
-              Product leader with 5+ years driving AI-powered growth and user-centric innovation
-            </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
-                I'm a product manager who specializes in leveraging artificial intelligence and data 
-                analytics to drive sustainable growth. My approach combines deep user research with 
-                cutting-edge AI technologies to build products that solve real problems and deliver 
-                measurable business outcomes.
+                I'm a results-driven Product Manager with a passion for creating products that users love. 
+                With expertise in B2B SaaS, I bridge the gap between business objectives, user needs, and technical feasibility.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                My approach combines deep user research with cutting-edge AI technologies to build products 
+                that solve real problems and deliver measurable business outcomes.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 When I'm not analyzing user data or designing product experiments, you'll find me 
-                exploring the latest AI research, mentoring junior PMs, or writing about the 
-                intersection of product management and emerging technologies.
+                mentoring junior PMs, building out my next side project, or enjoying a run with my Vizsla, Ziggy.
               </p>
             </div>
             <div className="space-y-8">
@@ -718,92 +730,48 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
-            <p className="text-xl opacity-90">
-              Have a product challenge or growth opportunity? I'd love to discuss how AI and data-driven strategies can help you succeed.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
-                <p className="text-lg opacity-90 leading-relaxed">
-                  I'm always excited to connect with fellow product enthusiasts, entrepreneurs, 
-                  and anyone passionate about building great products with AI.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:polina@kirillova.im" 
-                  className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
-                >
-                  <Mail className="w-6 h-6" />
-                  <span>polina@kirillova.im</span>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/polinakyrylova/" 
-                  className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin className="w-6 h-6" />
-                  <span>LinkedIn Profile</span>
-                </a>
-                <a 
-                  href="https://x.com/p_polina" 
-                  className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="w-6 h-6" />
-                  <span>Twitter Profile</span>
-                </a>
-                <a 
-                  href="https://github.com/mopilasi" 
-                  className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="w-6 h-6" />
-                  <span>GitHub Profile</span>
-                </a>
-              </div>
-            </div>
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Name</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/60"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/60"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <textarea 
-                      rows={4}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/60"
-                      placeholder="Let's discuss your product ideas..."
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
+          <p className="text-xl opacity-90 mb-8">
+            Have a product challenge or growth opportunity? I'd love to discuss how AI and data-driven strategies can help you succeed.
+          </p>
+          <p className="text-lg opacity-90 mb-12">Get in touch:</p>
+          
+          <div className="flex flex-wrap justify-center gap-8">
+            <a 
+              href="mailto:polina@kirillova.im" 
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
+            >
+              <Mail className="w-6 h-6" />
+              <span>Email</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/polinakyrylova/" 
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-6 h-6" />
+              <span>LinkedIn</span>
+            </a>
+            <a 
+              href="https://x.com/p_polina" 
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter className="w-6 h-6" />
+              <span>Twitter</span>
+            </a>
+            <a 
+              href="https://github.com/mopilasi" 
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="w-6 h-6" />
+              <span>GitHub</span>
+            </a>
           </div>
         </div>
       </section>
