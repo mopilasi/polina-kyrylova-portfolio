@@ -60,7 +60,7 @@ const Index = () => {
             </div>
             <a
               href="/CV_Polina_Kyrylova.pdf"
-              download="CV_Polina_Kyrylova.pdf"
+              download="Polina Kyrylova _ product manager.pdf"
             >
               <Button 
                 variant="outline" 
