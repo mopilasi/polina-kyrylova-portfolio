@@ -57,21 +57,21 @@ const Index = () => {
                   {section}
                 </button>
               ))}
-            </div>
-            <a
-              href="/CV_Polina_Kyrylova.pdf"
-              download="Polina Kyrylova _ product manager.pdf"
-            >
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="border-gray-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
-            </a>
-          </div>
+          <div>
+  <a
+    href="/assets/Polina Kyrylova _ product manager.pdf"
+    download="Polina Kyrylova _ product manager.pdf"
+  >
+    <Button 
+      variant="outline" 
+      size="sm" 
+      className="border-gray-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
+    >
+      <Download className="w-4 h-4 mr-2" />
+      Download CV
+    </Button>
+  </a>
+</div>
         </div>
       </nav>
 
