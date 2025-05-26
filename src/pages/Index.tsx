@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Mail, Linkedin, Github, ExternalLink, Calendar, MapPin, Download, Users, Target, Lightbulb } from 'lucide-react';
+import { ChevronDown, Mail, Linkedin, Github, ExternalLink, Calendar, MapPin, Download, Users, Target, Lightbulb, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -72,7 +71,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -721,9 +720,9 @@ const Index = () => {
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
+            <h2 className="text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
             <p className="text-xl opacity-90">
-              Interested in collaborating or want to discuss product management, AI, or growth strategies?
+              Have a product challenge or growth opportunity? I'd love to discuss how AI and data-driven strategies can help you succeed.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -737,14 +736,14 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 <a 
-                  href="mailto:polina@example.com" 
+                  href="mailto:polina@kirillova.im" 
                   className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
                 >
                   <Mail className="w-6 h-6" />
-                  <span>polina@example.com</span>
+                  <span>polina@kirillova.im</span>
                 </a>
                 <a 
-                  href="https://linkedin.com/in/polina" 
+                  href="https://www.linkedin.com/in/polinakyrylova/" 
                   className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -753,7 +752,16 @@ const Index = () => {
                   <span>LinkedIn Profile</span>
                 </a>
                 <a 
-                  href="https://github.com/polina" 
+                  href="https://x.com/p_polina" 
+                  className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Twitter className="w-6 h-6" />
+                  <span>Twitter Profile</span>
+                </a>
+                <a 
+                  href="https://github.com/mopilasi" 
                   className="flex items-center space-x-3 hover:text-blue-200 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
