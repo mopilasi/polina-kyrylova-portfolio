@@ -44,9 +44,6 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Polina
-            </div>
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'experience', 'projects', 'skills', 'blog', 'contact'].map((section) => (
                 <button
@@ -62,6 +59,14 @@ const Index = () => {
                 </button>
               ))}
             </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-gray-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download CV
+            </Button>
           </div>
         </div>
       </nav>
@@ -74,9 +79,8 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-6xl lg:text-7xl font-bold">
-                  <span className="block text-gray-900">Hi, I'm</span>
                   <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in">
-                    Polina
+                    Hi, I'm Polina
                   </span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-gray-600 font-medium">
@@ -127,45 +131,71 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <p className="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+              Product leader with 5+ years driving AI-powered growth and user-centric innovation
+            </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
-                I'm a results-driven Product Manager with a passion for creating products that users love. 
-                With expertise in B2B SaaS, I bridge the gap between business objectives, user needs, 
-                and technical feasibility.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                My approach combines deep user research with cutting-edge AI technologies to build 
-                products that solve real problems and deliver measurable business outcomes.
+                I'm a product manager who specializes in leveraging artificial intelligence and data 
+                analytics to drive sustainable growth. My approach combines deep user research with 
+                cutting-edge AI technologies to build products that solve real problems and deliver 
+                measurable business outcomes.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 When I'm not analyzing user data or designing product experiments, you'll find me 
-                mentoring junior PMs, building out my next side project, or enjoying a run with 
-                my Vizsla, Ziggy.
+                exploring the latest AI research, mentoring junior PMs, or writing about the 
+                intersection of product management and emerging technologies.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <Users className="w-8 h-8 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">User-Centric</h3>
-                <p className="text-sm text-gray-600">Deep user research drives every product decision</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <Target className="w-8 h-8 text-purple-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Results-Driven</h3>
-                <p className="text-sm text-gray-600">Focus on measurable business outcomes</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <Lightbulb className="w-8 h-8 text-pink-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Innovation</h3>
-                <p className="text-sm text-gray-600">Leveraging AI for product excellence</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <Calendar className="w-8 h-8 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Agile</h3>
-                <p className="text-sm text-gray-600">Fast iterations with continuous learning</p>
-              </Card>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Core Competencies</h3>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'Product Strategy',
+                    'AI/ML Integration', 
+                    'Growth Hacking',
+                    'Data Analytics',
+                    'User Research',
+                    'A/B Testing',
+                    'Agile/Scrum',
+                    'Roadmap Planning',
+                    'Stakeholder Management',
+                    'KPI Optimization'
+                  ].map((skill) => (
+                    <Badge 
+                      key={skill} 
+                      variant="outline" 
+                      className="px-4 py-2 text-sm border-purple-200 text-purple-700 hover:bg-purple-50 transition-colors"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Areas of Interest</h3>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'Machine Learning',
+                    'Growth Engineering',
+                    'Product Analytics',
+                    'User Psychology',
+                    'Behavioral Economics'
+                  ].map((interest) => (
+                    <Badge 
+                      key={interest} 
+                      variant="outline" 
+                      className="px-4 py-2 text-sm border-blue-200 text-blue-700 hover:bg-blue-50 transition-colors"
+                    >
+                      {interest}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -265,7 +295,6 @@ const Index = () => {
                 </Card>
               </div>
 
-              {/* Paxful */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -294,7 +323,6 @@ const Index = () => {
                 </Card>
               </div>
 
-              {/* Master Of Code Global */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-pink-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -316,13 +344,12 @@ const Index = () => {
                   </div>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Managed end-to-end delivery of enterprise-grade NLP chatbot projects for Fortune 500 clients</li>
-                    <li>• Tuned NLU models and built annotation pipelines - halving model update cycles and improving intent-recognition accuracy to >95%</li>
+                    <li>• Tuned NLU models and built annotation pipelines - halving model update cycles and improving intent-recognition accuracy to &gt;95%</li>
                     <li>• Coordinated cross-functional teams through design, development & deployment phases, ensuring on-time, on-budget delivery</li>
                   </ul>
                 </Card>
               </div>
 
-              {/* FigLeaf App */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -350,7 +377,6 @@ const Index = () => {
                 </Card>
               </div>
 
-              {/* ProZorro.sale */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-yellow-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -378,7 +404,6 @@ const Index = () => {
                 </Card>
               </div>
 
-              {/* Playtech */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-red-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -407,7 +432,6 @@ const Index = () => {
                 </Card>
               </div>
 
-              {/* Levi9 */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-teal-600 rounded-full border-4 border-white shadow-lg"></div>
                 <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
@@ -782,16 +806,6 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p>&copy; 2025 Polina. All rights reserved.</p>
-            </div>
-            <div className="flex space-x-6">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="border-gray-600 text-gray-300 hover:text-white hover:border-white"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
             </div>
           </div>
         </div>
