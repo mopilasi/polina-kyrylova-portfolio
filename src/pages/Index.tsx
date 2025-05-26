@@ -191,11 +191,9 @@ const Index = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Areas of Interest</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    'Machine Learning',
-                    'Growth Engineering',
-                    'Product Analytics',
-                    'User Psychology',
-                    'Behavioral Economics'
+                    'Product-Led Growth & Analytics',
+                    'AI Productization',
+                    'Human-AI Interaction & Safety',
                   ].map((interest) => (
                     <Badge 
                       key={interest} 
@@ -679,12 +677,12 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
               <CardContent className="p-6">
-                <div className="text-sm text-blue-600 font-medium mb-2">Product Strategy</div>
+                <div className="text-sm text-blue-600 font-medium mb-2">Vibe-coding</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  The Future of AI in Product Management
+                  Building my first mobile product 
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  How AI is transforming the way we build, measure, and optimize products for better user experiences.
+                  How AI is transforming the way we build – key takeaways from my journey vibe-coding a production ready app in less than in month.
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
                   <span>5 min read</span>
@@ -695,12 +693,12 @@ const Index = () => {
 
             <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
               <CardContent className="p-6">
-                <div className="text-sm text-purple-600 font-medium mb-2">Growth</div>
+                <div className="text-sm text-purple-600 font-medium mb-2">This Build Failed</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  Data-Driven Product Decisions
+                  Winning a battle against your compiler errors 
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  A framework for making product decisions based on user behavior analytics and business metrics.
+                  A concise guide to diagnosing and resolving the most common Xcode compiler errors.
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
                   <span>7 min read</span>
@@ -711,12 +709,12 @@ const Index = () => {
 
             <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
               <CardContent className="p-6">
-                <div className="text-sm text-green-600 font-medium mb-2">Leadership</div>
+                <div className="text-sm text-green-600 font-medium mb-2">The Future-Forward PM</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                  Building High-Performing Product Teams
+                  A Relatable Tale of Humans, Roadmaps and Helpful Robots
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Lessons learned from leading cross-functional teams and creating alignment across stakeholders.
+                  Jira still exists, but now it has an extremely chatty twin who writes half your tickets for you.
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
                   <span>6 min read</span>
@@ -733,7 +731,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
           <p className="text-xl opacity-90 mb-8">
-            Have a product challenge or growth opportunity? I'd love to discuss how AI and data-driven strategies can help you succeed.
+            Have a product challenge or growth opportunity? I'd love to discuss how I, data-driven strategies and AI can help you succeed.
           </p>
           <p className="text-lg opacity-90 mb-12">Get in touch:</p>
           
