@@ -17,6 +17,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import cvPdf from "@/assets/polinakyrylova-pm.pdf";
+import { PostModal } from "@/components/blog/PostModal";
+import { blogPosts, BlogPost } from "@/types/blog";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -59,6 +61,40 @@ const Index = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleCardClick = (postId: string) => {
+    const post = blogPosts.find((p) => p.id === postId);
+    if (!post) return;
+
+    setSelectedPost(post);
+    setIsLoading(true);
+    setError(null);
+    setIsModalOpen(true);
+
+    // Simulate loading content (in a real app, this would be an API call)
+    setTimeout(() => {
+      setIsLoading(false);
+      // In a real app, you would set the content from an API response here
+    }, 500);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPost(null);
+    setError(null);
+    setIsLoading(false);
+  };
+
+  const handleRetry = () => {
+    if (selectedPost) {
+      handleCardClick(selectedPost.id);
     }
   };
 
@@ -914,65 +950,37 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <CardContent className="p-6">
-                <div className="text-sm text-blue-600 font-medium mb-2">
-                  Vibe-coding
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  Building my first mobile product
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  How AI is transforming the way we build – key takeaways from
-                  my journey vibe-coding a production ready app in less than in
-                  month.
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>5 min read</span>
-                  <span>Coming Soon</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <CardContent className="p-6">
-                <div className="text-sm text-purple-600 font-medium mb-2">
-                  This Build Failed
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  Winning a battle against your compiler errors
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  A concise guide to diagnosing and resolving the most common
-                  Xcode compiler errors.
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>7 min read</span>
-                  <span>Coming Soon</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <CardContent className="p-6">
-                <div className="text-sm text-green-600 font-medium mb-2">
-                  The Future-Forward PM
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                  A Relatable Tale of Humans, Roadmaps and Helpful Robots
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Jira still exists, but now it has an extremely chatty twin who
-                  writes half your tickets for you.
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>6 min read</span>
-                  <span>Coming Soon</span>
-                </div>
-              </CardContent>
-            </Card>
+            {blogPosts.map((post) => (
+              <Card
+                key={post.id}
+                className="group hover:shadow-lg transition-all duration-300 cursor-pointer"
+                onClick={() => handleCardClick(post.id)}
+              >
+                <CardContent className="p-6">
+                  <div className="text-sm text-blue-600 font-medium mb-2">
+                    {post.category}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-500">
+                    <span>{post.readTime}</span>
+                    <span>Read More →</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
+        <PostModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          post={selectedPost}
+          isLoading={isLoading}
+          error={error}
+          onRetry={handleRetry}
+        />
       </section>
 
       {/* Contact Section */}
