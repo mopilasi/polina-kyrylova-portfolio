@@ -720,13 +720,18 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
               <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-center">
                     <h3 className="text-2xl font-bold mb-2">Eat Sip Repeat</h3>
                     <p className="text-sm opacity-90">AI-Powered Recipe App</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/90 text-blue-600 font-bold py-2 px-4 rounded-full text-sm">
+                    Coming Soon
                   </div>
                 </div>
               </div>
@@ -751,13 +756,18 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
               <div className="aspect-video bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-center">
                     <h3 className="text-2xl font-bold mb-2">PARiM Analytics</h3>
                     <p className="text-sm opacity-90">Workforce Optimization</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/90 text-purple-600 font-bold py-2 px-4 rounded-full text-sm">
+                    Coming Soon
                   </div>
                 </div>
               </div>
@@ -781,7 +791,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
               <div className="aspect-video bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -790,6 +800,11 @@ const Index = () => {
                       Fraud Prevention
                     </h3>
                     <p className="text-sm opacity-90">Marketplace Security</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/90 text-green-600 font-bold py-2 px-4 rounded-full text-sm">
+                    Coming Soon
                   </div>
                 </div>
               </div>

@@ -129,7 +129,7 @@ export function PostModal({
                 <Button variant="outline" size="sm" asChild>
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                      `Check out "${post.title}" by @yourhandle`
+                      `Check out "${post.title}" by @p_polina`
                     )}&url=${encodeURIComponent(window.location.href)}`}
                     target="_blank"
                     rel="noopener noreferrer"
