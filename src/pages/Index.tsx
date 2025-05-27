@@ -158,17 +158,17 @@ const Index = () => {
                   and measurable business impact.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-wrap gap-4 items-center">
                 <Button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
                 >
                   Get In Touch
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("projects")}
-                  className="border-2 border-gray-300 hover:border-blue-600 px-8 py-6 text-lg rounded-xl transition-all duration-300"
+                  className="border-2 border-gray-300 hover:border-blue-600 px-8 py-6 text-lg rounded-xl transition-all duration-300 whitespace-nowrap"
                 >
                   View My Work
                 </Button>
