@@ -17,6 +17,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+// Import the PDF file
+const cvPdf = new URL("/polinakyrylova-pm.pdf", import.meta.url).href;
+
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
 
@@ -92,8 +95,8 @@ const Index = () => {
             </div>
             <div>
               <a
-                href="/Polina Kyrylova _ product manager.pdf"
-                download="Polina_Kyrylova_Product_Manager.pdf"
+                href={cvPdf}
+                download="polinakyrylova-pm.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
