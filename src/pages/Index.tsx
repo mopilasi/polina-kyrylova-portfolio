@@ -71,6 +71,35 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Handle direct links to blog posts
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith("#blog-")) {
+        const postId = hash.replace("#blog-", "");
+        const post = blogPosts.find((p) => p.id === postId);
+        if (post) {
+          setSelectedPost(post);
+          setIsModalOpen(true);
+          // Scroll to blog section
+          document
+            .getElementById("blog")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    // Check for hash on initial load
+    handleHashChange();
+
+    // Add event listener for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
