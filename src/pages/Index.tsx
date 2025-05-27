@@ -1014,13 +1014,38 @@ const Index = () => {
           <p className="text-lg opacity-90 mb-12">Get in touch:</p>
 
           <div className="flex flex-wrap justify-center gap-8">
-            <a
-              href="mailto:polina@kirillova.im"
-              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText("polina@kirillova.im");
+                const button = document.getElementById("emailButton");
+                if (button) {
+                  button.textContent = "Email Copied!";
+                  setTimeout(() => {
+                    button.innerHTML =
+                      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Email';
+                  }, 2000);
+                }
+              }}
+              id="emailButton"
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg bg-transparent border-none cursor-pointer"
             >
-              <Mail className="w-6 h-6" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
               <span>Email</span>
-            </a>
+            </button>
             <a
               href="https://www.linkedin.com/in/polinakyrylova/"
               className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
