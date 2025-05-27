@@ -142,7 +142,8 @@ export function PostModal({
                   size="sm"
                   onClick={async () => {
                     try {
-                      await navigator.clipboard.writeText(window.location.href);
+                      const postUrl = `${window.location.origin}${window.location.pathname}#blog-${post.id}`;
+                      await navigator.clipboard.writeText(postUrl);
                       // You can add a toast notification here
                     } catch (err) {
                       console.error("Failed to copy URL", err);
