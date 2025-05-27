@@ -18,7 +18,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import cvPdf from "@/assets/polinakyrylova-pm.pdf";
 import { PostModal } from "@/components/blog/PostModal";
+import { ProjectModal } from "@/components/ProjectModal";
 import { blogPosts, BlogPost } from "@/types/blog";
+import { projectsData } from "@/data/projects";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -69,6 +71,9 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+
   const handleCardClick = (postId: string) => {
     const post = blogPosts.find((p) => p.id === postId);
     if (!post) return;
@@ -85,11 +90,21 @@ const Index = () => {
     }, 500);
   };
 
+  const handleProjectClick = (projectId: string) => {
+    setSelectedProject(projectId);
+    setIsProjectModalOpen(true);
+  };
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedPost(null);
     setError(null);
     setIsLoading(false);
+  };
+
+  const handleCloseProjectModal = () => {
+    setIsProjectModalOpen(false);
+    setSelectedProject(null);
   };
 
   const handleRetry = () => {
@@ -720,22 +735,20 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
-              <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
+            <Card 
+              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
+              onClick={() => handleProjectClick('eat-sip-repeat')}
+            >
+              <div className="aspect-video bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <h3 className="text-2xl font-bold mb-2">Eat Sip Repeat</h3>
-                    <p className="text-sm opacity-90">AI-Powered Recipe App</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 text-blue-600 font-bold py-2 px-4 rounded-full text-sm">
-                    Coming Soon
-                  </div>
-                </div>
+                <img
+                  src="/lovable-uploads/c6127307-bb94-42c4-822e-035f51e24275.png"
+                  alt="Eat Sip Repeat"
+                  className="w-32 h-32 object-contain relative z-10"
+                />
               </div>
               <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Eat Sip Repeat</h3>
                 <p className="text-gray-600 mb-4">
                   Native mobile app with automated menu generation using AI
                   models, dietary constraints, and user feedback loops.
@@ -748,15 +761,18 @@ const Index = () => {
                 </div>
                 <Button
                   variant="outline"
-                  className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"
+                  className="w-full group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300"
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  View Project
+                  View Details
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
+            <Card 
+              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
+              onClick={() => handleProjectClick('parim')}
+            >
               <div className="aspect-video bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -765,13 +781,9 @@ const Index = () => {
                     <p className="text-sm opacity-90">Workforce Software</p>
                   </div>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 text-purple-600 font-bold py-2 px-4 rounded-full text-sm">
-                    Coming Soon
-                  </div>
-                </div>
               </div>
               <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">PARiM</h3>
                 <p className="text-gray-600 mb-4">
                   Data-driven scheduling and time-tracking platform with
                   advanced analytics and performance optimization features.
@@ -791,7 +803,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative">
+            <Card 
+              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
+              onClick={() => handleProjectClick('paxful')}
+            >
               <div className="aspect-video bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -802,13 +817,9 @@ const Index = () => {
                     <p className="text-sm opacity-90">Marketplace Security</p>
                   </div>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 text-green-600 font-bold py-2 px-4 rounded-full text-sm">
-                    Coming Soon
-                  </div>
-                </div>
               </div>
               <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Fraud Prevention</h3>
                 <p className="text-gray-600 mb-4">
                   Comprehensive fraud prevention system for cryptocurrency
                   marketplace, reducing fraud claims by 15% and improving user
@@ -830,6 +841,11 @@ const Index = () => {
             </Card>
           </div>
         </div>
+        <ProjectModal
+          isOpen={isProjectModalOpen}
+          onClose={handleCloseProjectModal}
+          project={selectedProject ? projectsData[selectedProject] : null}
+        />
       </section>
 
       {/* Skills Section */}
