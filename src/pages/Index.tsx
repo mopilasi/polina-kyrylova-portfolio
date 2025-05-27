@@ -220,7 +220,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Image on the left */}
             <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
               <div className="relative">
