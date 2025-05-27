@@ -16,9 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
-// Import the PDF file
-const cvPdf = new URL("/polinakyrylova-pm.pdf", import.meta.url).href;
+import cvPdf from "@/assets/polinakyrylova-pm.pdf";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
