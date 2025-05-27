@@ -221,7 +221,20 @@ const Index = () => {
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            {/* Image on the left */}
+            <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+                <img
+                  src="/lovable-uploads/9a661e19-1674-4a13-97de-000095bb5de1.png"
+                  alt="Polina"
+                  className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
+
+            {/* Text content on the right */}
+            <div className="space-y-8 order-1 lg:order-2">
               <div className="space-y-4">
                 <h1 className="text-6xl lg:text-7xl font-bold">
                   <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in">
@@ -252,16 +265,6 @@ const Index = () => {
                 >
                   View My Work
                 </Button>
-              </div>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-                <img
-                  src="/lovable-uploads/9a661e19-1674-4a13-97de-000095bb5de1.png"
-                  alt="Polina"
-                  className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl"
-                />
               </div>
             </div>
           </div>
