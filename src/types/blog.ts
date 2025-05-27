@@ -1,4 +1,5 @@
 
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -72,3 +73,4 @@ export const blogPosts: BlogPost[] = [
     content: "# Mobile Product Management: From Concept to App Store\n\nShipping mobile apps requires balancing user needs, technical constraints, and business objectives..."
   }
 ];
+
