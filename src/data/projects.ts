@@ -1,4 +1,3 @@
-
 export const projectsData = {
   "eat-sip-repeat": {
     id: "eat-sip-repeat",
@@ -48,7 +47,6 @@ export const projectsData = {
     results: [
       "<2 s menu generation: Users receive complete, balanced menus nearly instantaneously."
     ],
-    image: "/lovable-uploads/c6127307-bb94-42c4-822e-035f51e24275.png",
     tags: ["SwiftUI", "Firebase", "GPT", "Python", "AI/ML"],
     linkText: "Explore the app"
   },

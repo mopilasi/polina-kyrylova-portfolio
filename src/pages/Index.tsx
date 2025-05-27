@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import cvPdf from "@/assets/polinakyrylova-pm.pdf";
 import { PostModal } from "@/components/blog/PostModal";
 import { ProjectModal } from "@/components/ProjectModal";
@@ -112,6 +113,11 @@ const Index = () => {
       handleCardClick(selectedPost.id);
     }
   };
+
+  // Sort blog posts by date (newest first)
+  const sortedBlogPosts = [...blogPosts].sort((a, b) => 
+    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
@@ -741,11 +747,10 @@ const Index = () => {
             >
               <div className="aspect-video bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <img
-                  src="/lovable-uploads/c6127307-bb94-42c4-822e-035f51e24275.png"
-                  alt="Eat Sip Repeat"
-                  className="w-32 h-32 object-contain relative z-10"
-                />
+                <div className="text-white text-center relative z-10">
+                  <h3 className="text-2xl font-bold mb-2">Eat Sip Repeat</h3>
+                  <p className="text-sm opacity-90">AI Menu Planning</p>
+                </div>
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Eat Sip Repeat</h3>
@@ -967,7 +972,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
+      {/* Blog Section with Carousel */}
       <section id="blog" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -980,29 +985,35 @@ const Index = () => {
               building products that users love.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card
-                key={post.id}
-                className="group hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => handleCardClick(post.id)}
-              >
-                <CardContent className="p-6">
-                  <div className="text-sm text-blue-600 font-medium mb-2">
-                    {post.category}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.readTime}</span>
-                    <span>Read More →</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4">
+              {sortedBlogPosts.map((post) => (
+                <CarouselItem key={post.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card
+                    className="group hover:shadow-lg transition-all duration-300 cursor-pointer h-full"
+                    onClick={() => handleCardClick(post.id)}
+                  >
+                    <CardContent className="p-6">
+                      <div className="text-sm text-blue-600 font-medium mb-2">
+                        {post.category}
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                      <div className="flex items-center justify-between text-sm text-gray-500">
+                        <span>{post.readTime}</span>
+                        <span>Read More →</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
         <PostModal
           isOpen={isModalOpen}
@@ -1014,7 +1025,7 @@ const Index = () => {
         />
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section - Updated */}
       <section
         id="contact"
         className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white"
@@ -1025,25 +1036,14 @@ const Index = () => {
           </h2>
           <p className="text-xl opacity-90 mb-8">
             Have a product challenge or growth opportunity? I'd love to discuss
-            how I, data-driven strategies and AI can help you succeed.
+            how AI and data-driven strategies can help you succeed.
           </p>
           <p className="text-lg opacity-90 mb-12">Get in touch:</p>
 
           <div className="flex flex-wrap justify-center gap-8">
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText("polina@kirillova.im");
-                const button = document.getElementById("emailButton");
-                if (button) {
-                  button.textContent = "Email Copied!";
-                  setTimeout(() => {
-                    button.innerHTML =
-                      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Email';
-                  }, 2000);
-                }
-              }}
-              id="emailButton"
-              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg bg-transparent border-none cursor-pointer"
+            <a
+              href="mailto:polina@kirillova.im"
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1061,7 +1061,7 @@ const Index = () => {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
               <span>Email</span>
-            </button>
+            </a>
             <a
               href="https://www.linkedin.com/in/polinakyrylova/"
               className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
