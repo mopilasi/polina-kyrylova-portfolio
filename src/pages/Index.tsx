@@ -293,8 +293,8 @@ const Index = () => {
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 When I'm not analyzing user data or designing product
-                experiments, you'll find me mentoring junior PMs, building out
-                my next side project, or enjoying a run with my Vizsla, Ziggy.
+                experiments, you'll find me building my next side project,
+                baking cookies, or enjoying a run with my vizsla pup, Ziggy.
               </p>
             </div>
             <div className="space-y-8">
