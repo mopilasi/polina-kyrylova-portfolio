@@ -735,20 +735,21 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card 
+            <Card
               className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
-              onClick={() => handleProjectClick('eat-sip-repeat')}
+              onClick={() => handleProjectClick("eat-sip-repeat")}
             >
               <div className="aspect-video bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <img
-                  src="/lovable-uploads/c6127307-bb94-42c4-822e-035f51e24275.png"
-                  alt="Eat Sip Repeat"
-                  className="w-32 h-32 object-contain relative z-10"
-                />
+                <div className="text-white text-center relative z-10 p-6">
+                  <h3 className="text-2xl font-bold mb-2">Eat Sip Repeat</h3>
+                  <p className="text-sm opacity-90">AI-Powered Recipe App</p>
+                </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Eat Sip Repeat</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Eat Sip Repeat
+                </h3>
                 <p className="text-gray-600 mb-4">
                   Native mobile app with automated menu generation using AI
                   models, dietary constraints, and user feedback loops.
@@ -769,9 +770,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card 
+            <Card
               className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
-              onClick={() => handleProjectClick('parim')}
+              onClick={() => handleProjectClick("parim")}
             >
               <div className="aspect-video bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
@@ -803,9 +804,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card 
+            <Card
               className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative cursor-pointer"
-              onClick={() => handleProjectClick('paxful')}
+              onClick={() => handleProjectClick("paxful")}
             >
               <div className="aspect-video bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
@@ -819,7 +820,9 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Fraud Prevention</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Fraud Prevention
+                </h3>
                 <p className="text-gray-600 mb-4">
                   Comprehensive fraud prevention system for cryptocurrency
                   marketplace, reducing fraud claims by 15% and improving user
