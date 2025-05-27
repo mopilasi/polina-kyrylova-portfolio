@@ -121,7 +121,7 @@ Instead of letting it overwhelm me, I decided to do something productive: I aske
 
 ## Scene 2: Instant Mixpanel insights
 
-I did spend days building dashboards in Mixpanel. Now I just export the dashboard JSON and paste it into an AI helper, and it:
+I spend days building dashboards in Mixpanel. Now I just export the dashboard JSON and paste it into an AI helper, and it:
 
 1. Spots weird spikes in sessions before I notice them  
 2. Suggests which user segments to dig into (“Maybe new sign-ups are dropping after onboarding.”)  
