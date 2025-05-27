@@ -762,7 +762,7 @@ const Index = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-center">
                     <h3 className="text-2xl font-bold mb-2">PARiM</h3>
-                    <p className="text-sm opacity-90">Workforce Optimization</p>
+                    <p className="text-sm opacity-90">Workforce Software</p>
                   </div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
