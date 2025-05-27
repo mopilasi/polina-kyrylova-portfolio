@@ -92,9 +92,7 @@ const Index = () => {
             </div>
             <div>
               <a
-                href={`${
-                  process.env.PUBLIC_URL || ""
-                }/Polina Kyrylova _ product manager.pdf`}
+                href="/Polina Kyrylova _ product manager.pdf"
                 download="Polina_Kyrylova_Product_Manager.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
