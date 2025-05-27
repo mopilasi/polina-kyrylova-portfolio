@@ -92,7 +92,7 @@ const Index = () => {
             </div>
             <div>
               <a
-                href="/assets/Polina Kyrylova _ product manager.pdf"
+                href="/Polina Kyrylova _ product manager.pdf"
                 download="Polina Kyrylova _ product manager.pdf"
               >
                 <Button
