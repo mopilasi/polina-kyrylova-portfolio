@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Modal } from "@/components/ui/modal";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +21,7 @@ interface ProjectModalProps {
     results: string[];
     link?: string;
     linkText?: string;
+    caseStudyLink?: string;
     image?: string;
     tags: string[];
   } | null;
@@ -42,9 +42,11 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             />
           </div>
         )}
-        
+
         <div>
-          <p className="text-lg font-medium text-gray-600 mb-4">{project.subtitle}</p>
+          <p className="text-lg font-medium text-gray-600 mb-4">
+            {project.subtitle}
+          </p>
           <h3 className="text-xl font-bold mb-4">Background</h3>
           <p className="text-gray-700 leading-relaxed">{project.background}</p>
         </div>
@@ -68,7 +70,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                 <h4 className="text-lg font-semibold mb-2">{section.title}</h4>
                 <p className="text-gray-700 mb-3">{section.description}</p>
                 <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-600 mb-2">Key activities:</p>
+                  <p className="text-sm font-medium text-gray-600 mb-2">
+                    Key activities:
+                  </p>
                   <ul className="space-y-1">
                     {section.activities.map((activity, actIndex) => (
                       <li key={actIndex} className="text-gray-700 text-sm">
@@ -83,25 +87,44 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
         </div>
 
         <div>
-          <h3 className="text-xl font-bold mb-4">Results</h3>
-          <ul className="space-y-2">
-            {project.results.map((result, index) => (
-              <li key={index} className="text-gray-700 leading-relaxed">
-                • {result}
-              </li>
-            ))}
-          </ul>
+          {project.caseStudyLink ? (
+            <a
+              href={project.caseStudyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-bold text-blue-600 hover:underline flex items-center gap-2"
+            >
+              View full case study
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          ) : (
+            <>
+              <h3 className="text-xl font-bold mb-4">Results</h3>
+              <ul className="space-y-2">
+                {project.results.map((result, index) => (
+                  <li key={index} className="text-gray-700 leading-relaxed">
+                    • {result}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary">{tag}</Badge>
+            <Badge key={tag} variant="secondary">
+              {tag}
+            </Badge>
           ))}
         </div>
 
         {project.link && (
           <div className="flex justify-center pt-4">
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button
+              asChild
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
               <a
                 href={project.link}
                 target="_blank"
