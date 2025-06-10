@@ -369,6 +369,45 @@ const Index = () => {
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600"></div>
             <div className="space-y-12">
+              {/* Closure */}
+              <div className="relative pl-20">
+                <div className="absolute left-6 w-4 h-4 bg-emerald-600 rounded-full border-4 border-white shadow-lg"></div>
+                <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">
+                        Co-Founder
+                      </h3>
+                      <p className="text-emerald-600 font-medium">Closure</p>
+                    </div>
+                    <div className="text-gray-500 text-sm lg:text-right">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        06/2025 – Present
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <MapPin className="w-4 h-4" />
+                        San Francisco, CA
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-gray-600">
+                    <li>
+                      • End-to-end business assessment
+                    </li>
+                    <li>
+                      • Analyzed subscription tiers, pricing elasticity, and retention cohorts; recommended a tiered-pricing structure projected to increase MRR by 15%
+                    </li>
+                    <li>
+                      • Reviewed user interviews and in-app analytics to identify feature gaps, translating insights into prioritized roadmap items for improved daily active usage
+                    </li>
+                    <li>
+                      • Built Amplitude dashboards tracking churn drivers and LTV metrics
+                    </li>
+                  </ul>
+                </Card>
+              </div>
+
               {/* Eat Sip Repeat */}
               <div className="relative pl-20">
                 <div className="absolute left-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
@@ -1065,38 +1104,13 @@ const Index = () => {
           <p className="text-lg opacity-90 mb-12">Get in touch:</p>
 
           <div className="flex flex-wrap justify-center gap-8">
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText("polina@kirillova.im");
-                const button = document.getElementById("emailButton");
-                if (button) {
-                  button.textContent = "Email Copied!";
-                  setTimeout(() => {
-                    button.innerHTML =
-                      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Email';
-                  }, 2000);
-                }
-              }}
-              id="emailButton"
-              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg bg-transparent border-none cursor-pointer"
+            <a
+              href="mailto:polina@kirillova.im"
+              className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
+              <Mail className="w-6 h-6" />
               <span>Email</span>
-            </button>
+            </a>
             <a
               href="https://www.linkedin.com/in/polinakyrylova/"
               className="flex items-center space-x-3 hover:text-blue-200 transition-colors text-lg"
