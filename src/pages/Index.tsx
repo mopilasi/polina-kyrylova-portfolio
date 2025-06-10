@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   ChevronDown,
@@ -174,7 +175,7 @@ const Index = () => {
             <div>
               <a
                 href={cvPdf}
-                download="polinakyrylova-pm.pdf"
+                download="Polina Kyrylova_ product manager.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
